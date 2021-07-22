@@ -10,7 +10,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/CimimUxMaio/artscii"
+	"github.com/CimimUxMaio/artscii/artscii"
 	"github.com/akamensky/argparse"
 	"github.com/eiannone/keyboard"
 	"gocv.io/x/gocv"
@@ -34,7 +34,7 @@ func main() {
 
 	event, err := keyboard.GetKeys(1)
 	checkError(err)
-	defer func() { _ = keyboard.Close() }()
+	defer keyboard.Close()
 
 	end := false
 	for !end {
@@ -43,7 +43,7 @@ func main() {
 		img, err := camImg.ToImage()
 		checkError(err)
 		ascii := artscii.FromImage(img, []rune(*asciiScale))
-		//ascii.Print()
+		ascii.Print()
 
 		select {
 		case keyEvent := <-event:
@@ -70,9 +70,6 @@ func checkError(err error) {
 func generatePhotoName() string {
 	workingDir, err := os.Getwd()
 	checkError(err)
-	hash := sha256.New()
-	hash.Write([]byte(time.Now().String()))
-	digest := fmt.Sprintf("%x", hash.Sum(nil))
-	fmt.Println(string(digest[:8]))
-	return workingDir + "/photo_" + string(digest[:8])
+	hash := fmt.Sprintf("%x", sha256.Sum256([]byte(time.Now().String())))
+	return workingDir + "/photo_" + string(hash[:8])
 }
