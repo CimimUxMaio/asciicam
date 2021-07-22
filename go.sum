@@ -1,8 +1,12 @@
-github.com/CimimUxMaio/artscii v0.0.0-20210720214517-93edee286e3e h1:1QcMZ6xl/2vodSQv64xd913ZwEjHM8tHwCqSzErrmsQ=
-github.com/CimimUxMaio/artscii v0.0.0-20210720214517-93edee286e3e/go.mod h1:s2/99fsJuqGrab5r25QYtWghu5uzMhd5HKnWszzmTEY=
+github.com/CimimUxMaio/artscii v0.0.0-20210721201713-6513c963bceb h1:7Xai8QB6h8ClwxelKWodxdmXtIAI8OBwvCS1EP5JzWw=
+github.com/CimimUxMaio/artscii v0.0.0-20210721201713-6513c963bceb/go.mod h1:s2/99fsJuqGrab5r25QYtWghu5uzMhd5HKnWszzmTEY=
 github.com/akamensky/argparse v1.3.0 h1:/y3NFl6Nhw6alHDWoI9tx3vSyrB5zRgs4y9jzHxtjjg=
 github.com/akamensky/argparse v1.3.0/go.mod h1:S5kwC7IuDcEr5VeXtGPRVZ5o/FdhcMlQz4IZQuw64xA=
+github.com/eiannone/keyboard v0.0.0-20200508000154-caf4b762e807 h1:jdjd5e68T4R/j4PWxfZqcKY8KtT9oo8IPNVuV4bSXDQ=
+github.com/eiannone/keyboard v0.0.0-20200508000154-caf4b762e807/go.mod h1:Xoiu5VdKMvbRgHuY7+z64lhu/7lvax/22nzASF6GrO8=
 github.com/hybridgroup/mjpeg v0.0.0-20140228234708-4680f319790e/go.mod h1:eagM805MRKrioHYuU7iKLUyFPVKqVV6um5DAvCkUtXs=
 github.com/pascaldekloe/goe v0.1.0/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 gocv.io/x/gocv v0.28.0 h1:hweRS9Js60YEZPZzjhU5I+0E2ngazquLlO78zwnrFvY=
 gocv.io/x/gocv v0.28.0/go.mod h1:oc6FvfYqfBp99p+yOEzs9tbYF9gOrAQSeL/dyIPefJU=
+golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c h1:F1jZWGFhYfh0Ci55sIpILtKKK8p3i2/krTr0H1rg74I=
+golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
