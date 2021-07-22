@@ -7,6 +7,7 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 	"log"
+	"math"
 	"os"
 	"time"
 
@@ -37,11 +38,26 @@ func main() {
 	defer keyboard.Close()
 
 	end := false
+	flash := false
+	flashState := 0
+	flashDuration := 5
 	for !end {
 		webcam.Read(&camImg)
 		gocv.Resize(camImg, &camImg, image.Point{*width, *height}, 0, 0, gocv.InterpolationNearestNeighbor)
+
+		if flash {
+			k := 1 + 20*math.Sin(float64(flashState)*math.Pi/float64(flashDuration))
+			camImg.MultiplyFloat(float32(k))
+			flashState += 1
+			if flashState > flashDuration {
+				flashState = 0
+				flash = false
+			}
+		}
+
 		img, err := camImg.ToImage()
 		checkError(err)
+
 		ascii := artscii.FromImage(img, []rune(*asciiScale))
 		ascii.Print()
 
@@ -49,9 +65,8 @@ func main() {
 		case keyEvent := <-event:
 			switch keyEvent.Key {
 			case keyboard.KeySpace:
-				name := generatePhotoName()
-				fmt.Println(name)
-				_, err = ascii.ToFile(name)
+				flash = true
+				_, err = ascii.ToFile(generatePhotoName())
 				checkError(err)
 			case keyboard.KeyCtrlC:
 				end = true
